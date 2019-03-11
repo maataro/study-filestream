@@ -37,8 +37,8 @@ rl.on('close', () => {
     const rankingArray = Array.from(studentDataMap).sort((pair1, pair2) => {
         return pair2[1].change - pair1[1].change;
     });
-    const rankingStrings = rankingArray.map(([key, value]) =>{
-        return key + ': ' + value.score18 + '=>' + value.score19 + ' 変化率: ' + value.change;
+    const rankingStrings = rankingArray.map(([key, value], i) =>{
+        return (i+1) + '位 ' + key + ': ' + value.score18 + '=>' + value.score19 + ' 変化率: ' + value.change;
     });
     console.log(rankingStrings);
 });
